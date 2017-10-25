@@ -1113,12 +1113,12 @@ div.box_doitac{
     div.scroller-column-left{
         display: none;
     }
-    /*div.partner-instruction-phongthuy > div:nth-chid(1),div.partner-instruction-phongthuy > div:nth-chid(2){
-        display: none;
-    }*/
-    /*div.scroller-column-right,div.featured-article-column,div.partner-instruction-phongthuy > div:nth-chid(3){
+    div.scroller-column-right{
         padding-left: 0;
-    }*/
+    }
+    div.featured-article-column{
+        padding-left: 0;
+    }    
 }
 
 

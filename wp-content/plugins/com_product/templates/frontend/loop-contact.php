@@ -46,6 +46,6 @@ global $zController,$zendvn_sp_settings;
 		<div class="clr"></div>
 	</div>	
 	<div class="margin-top-15">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3021006514014!2d106.65099931418271!3d10.788158261928471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQ3JzE3LjQiTiAxMDbCsDM5JzExLjUiRQ!5e0!3m2!1svi!2s!4v1508807920122" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3871.605543764119!2d108.07355431421081!3d13.982069195684272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDU4JzU1LjQiTiAxMDjCsDA0JzMyLjciRQ!5e0!3m2!1svi!2s!4v1508913801584" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
 	</div>
 </div>
