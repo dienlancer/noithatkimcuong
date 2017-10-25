@@ -22,6 +22,7 @@ $meta_key = "_zendvn_sp_zaproduct_";
             $opened_time=$zendvn_sp_settings['opened_time'];
             $opened_date=$zendvn_sp_settings['opened_date'];
             $contaced_name=$zendvn_sp_settings['contacted_name'];
+            $product_number=$zendvn_sp_settings["product_number"];
             /* end load config contact */
             /* begin load term */
             $terms = get_terms( array(
@@ -35,7 +36,7 @@ $meta_key = "_zendvn_sp_zaproduct_";
             $pageRange=10;
             $currentPage=1; 
             if(!empty($zendvn_sp_settings["product_number"]))
-                $totalItemsPerPage=$zendvn_sp_settings["product_number"];        
+                $totalItemsPerPage=$product_number;       
             if(!empty(@$_POST["filter_page"]))          
                 $currentPage=@$_POST["filter_page"];  
             $productModel->setWpQuery($the_query);   
