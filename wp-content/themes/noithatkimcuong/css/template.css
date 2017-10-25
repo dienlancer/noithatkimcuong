@@ -98,7 +98,7 @@ div.mobilemenu{
         display: none;
     }
 }
-@media(max-width: 1170px){
+@media(max-width: 1199px){
     .ddsmoothmenu ul li a{
         padding:14px 9px;
     }
@@ -1093,7 +1093,11 @@ div.contact-info > div.contact-info-child{
     font-size: 16px;
     font-weight: bold;
 }
-@media (max-width: 1170px){
+div.box_doitac{
+    margin:auto;
+    width: 300px;
+}
+@media (max-width: 1199px){
     div.phone-number > div{
         display: none;
     }
@@ -1109,12 +1113,12 @@ div.contact-info > div.contact-info-child{
     div.scroller-column-left{
         display: none;
     }
-    div.partner-instruction-phongthuy > div:nth-chid(1),div.partner-instruction-phongthuy > div:nth-chid(2){
+    /*div.partner-instruction-phongthuy > div:nth-chid(1),div.partner-instruction-phongthuy > div:nth-chid(2){
         display: none;
-    }
-    div.scroller-column-right,div.featured-article-column,div.partner-instruction-phongthuy > div:nth-chid(3){
+    }*/
+    /*div.scroller-column-right,div.featured-article-column,div.partner-instruction-phongthuy > div:nth-chid(3){
         padding-left: 0;
-    }
+    }*/
 }
 
 
