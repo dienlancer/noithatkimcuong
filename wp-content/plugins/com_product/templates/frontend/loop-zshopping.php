@@ -42,14 +42,15 @@ $meta_key = "_zendvn_sp_zaproduct_";
             $productModel->setWpQuery($the_query);   
             $productModel->setPerpage($totalItemsPerPage);        
             $productModel->prepare_items();               
-            $totalItems= $productModel->getTotalItems();               
+            $totalItems= $productModel->getTotalItems();        
+            $the_query=$productModel->getItems();              
             $arrPagination=array(
               "totalItems"=>$totalItems,
               "totalItemsPerPage"=>$totalItemsPerPage,
               "pageRange"=>$pageRange,
               "currentPage"=>$currentPage   
             );    
-            $pagination=$zController->getPagination("Pagination",$arrPagination);              
+            $pagination=$zController->getPagination("Pagination",$arrPagination);                
             if($the_query->have_posts()){
                 $k=1;
                 while ($the_query->have_posts()) {

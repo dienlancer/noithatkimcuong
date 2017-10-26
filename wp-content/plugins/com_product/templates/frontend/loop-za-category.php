@@ -28,6 +28,7 @@
               'hide_empty' => false,  ) );  
             /* end load term */            
             $the_query=$wp_query;
+
             // begin phân trang
             $totalItemsPerPage=0;
             $pageRange=10;
@@ -39,14 +40,15 @@
             $productModel->setWpQuery($the_query);   
             $productModel->setPerpage($totalItemsPerPage);        
             $productModel->prepare_items();               
-            $totalItems= $productModel->getTotalItems();               
+            $totalItems= $productModel->getTotalItems();   
+            $the_query=$productModel->getItems();                
             $arrPagination=array(
               "totalItems"=>$totalItems,
               "totalItemsPerPage"=>$totalItemsPerPage,
               "pageRange"=>$pageRange,
               "currentPage"=>$currentPage   
             );    
-            $pagination=$zController->getPagination("Pagination",$arrPagination);              
+            $pagination=$zController->getPagination("Pagination",$arrPagination);                
             if($the_query->have_posts()){
                 $k=1;
                 while ($the_query->have_posts()) {

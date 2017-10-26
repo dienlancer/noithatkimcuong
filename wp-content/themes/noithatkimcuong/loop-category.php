@@ -22,7 +22,8 @@ $meta_key = "_zendvn_sp_post_";
             $productModel->setWpQuery($the_query);   
             $productModel->setPerpage($totalItemsPerPage);        
             $productModel->prepare_items();               
-            $totalItems= $productModel->getTotalItems();               
+            $totalItems= $productModel->getTotalItems();    
+            $the_query=$productModel->getItems();                  
             $arrPagination=array(
                                       "totalItems"=>$totalItems,
                                       "totalItemsPerPage"=>$totalItemsPerPage,
