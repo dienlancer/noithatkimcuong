@@ -11,6 +11,8 @@ $website=$zendvn_sp_settings['website'];
 $opened_time=$zendvn_sp_settings['opened_time'];
 $opened_date=$zendvn_sp_settings['opened_date'];
 $contacted_name=$zendvn_sp_settings['contacted_name'];
+$width=$zendvn_sp_settings["product_width"];    
+$height=$zendvn_sp_settings["product_height"];    
 $post_meta_key = "_zendvn_sp_post_";
 $page_meta_key = "_zendvn_sp_page_";
 if(!empty($instance['item_id'])){
@@ -296,9 +298,10 @@ if(!empty($instance['item_id'])){
 							$permalink=get_the_permalink($post_id);
 							$title=get_the_title($post_id);
 							$excerpt=get_post_meta($post_id,$post_meta_key."intro",true);
-							$featureImg=wp_get_attachment_url(get_post_thumbnail_id($post_id));		   
-							$featureImg=$vHtml->getFileName($featureImg);
-							$featureImg=site_url('/wp-content/uploads/'.$featureImg ,null );  
+							$featureImg=wp_get_attachment_url(get_post_thumbnail_id($post_id));
+		                    $featureImg=$vHtml->getFileName($featureImg);
+		                    $featureImg=$width.'x'.$height.'-'.$featureImg;                    
+		                    $featureImg=site_url( '/wp-content/uploads/'.$featureImg, null ) ; 
 							?>
 							<div class="items">
 								<img src="<?php echo $featureImg; ?>" alt="" />                            
