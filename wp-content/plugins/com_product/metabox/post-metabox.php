@@ -24,12 +24,12 @@ class PostMetabox{
 		global $zController , $post ;
 		$vHtml=new HtmlControl(); 
 		wp_nonce_field($this->_metabox_id,$this->_metabox_id . "-nonce");
-		// Tạo phần tử chứa mã sản phẩm
+		// Tạo phần tử chứa giới thiệu sơ bộ
 		$inputID = $this->create_id("intro");
 		$inputName = $this->create_id("intro");
 		$inputValue = get_post_meta($post->ID,$this->create_key("intro"),true);		
 		$html		='<div><b>Giới thiệu</b></div><div>'.$vHtml->cmsTextarea($inputID,$inputName,"widefat",$inputValue,8,120).'</div>' ;
-		echo $html;			
+		echo $html;		
 	}
 	public function save($post_id){
 

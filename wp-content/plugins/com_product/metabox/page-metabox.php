@@ -24,7 +24,7 @@ class PageMetabox{
 		global $zController , $post ;
 		$vHtml=new HtmlControl(); 
 		wp_nonce_field($this->_metabox_id,$this->_metabox_id . "-nonce");
-		// Tạo phần tử chứa mã sản phẩm
+		// Tạo phần tử chứa giới thiệu sơ bộ
 		$inputID = $this->create_id("intro");
 		$inputName = $this->create_id("intro");
 		$inputValue = get_post_meta($post->ID,$this->create_key("intro"),true);		
