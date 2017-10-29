@@ -123,7 +123,7 @@ if($instance["status"]=='active'){
 				$term_img=site_url('/wp-content/uploads/'.$term_img ,null );
 				?>
 				<div class="col-sm-4 box-product">
-					<div class="box-img"><center><figure><a href="<?php echo $term_link; ?>"><img src="<?php echo $term_img; ?>" /></a></figure></center></div>
+					<div class="box-img"><figure><center><a href="<?php echo $term_link; ?>"><img src="<?php echo $term_img; ?>" /></a></center></figure></div>
 					<div class="box-title"><a href="<?php echo $term_link; ?>"><?php echo $term_name; ?></a></div>
 					<div class="box-detail">
 						<div class="col-xs-8 no-padding">

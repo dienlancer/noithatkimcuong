@@ -24,7 +24,7 @@ if(have_posts()){
   			?>
   			<div class="col-sm-4">
 					<div>
-					<center><figure><a href="<?php echo $categoryLink; ?>"><img src="<?php echo $imageCategory ?>"></a></figure></center>
+					<figure><center><a href="<?php echo $categoryLink; ?>"><img src="<?php echo $imageCategory ?>"></a></center></figure>
 					</div>
 					<div class="item-row-title-category-article"><a href="<?php echo $categoryLink; ?>" class="a_1"><?php echo $categoryName; ?></a></div>
 

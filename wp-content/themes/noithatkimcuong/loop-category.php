@@ -48,7 +48,7 @@ $meta_key = "_zendvn_sp_post_";
                     $count  =   (int)$count_view_post;                
                     ?>
                     <div class="col-md-4 box-article">
-                        <div class="box-img"><center><figure><a href="<?php echo $permalink; ?>"><img width="380" height="220" src="<?php echo $featureImg; ?>"></a></figure></center></div>
+                        <div class="box-img"><figure><center><a href="<?php echo $permalink; ?>"><img width="380" height="220" src="<?php echo $featureImg; ?>"></a></center></figure></div>
                         <div class="box-article-title"><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></div>
                         <div><b>Lượt xem :</b> <?php echo $count; ?></div>
                         <div class="box-intro"><?php echo $excerpt; ?></div>                        

@@ -82,7 +82,7 @@ $meta_key = "_zendvn_sp_zaproduct_";
                     }
                     ?>
                     <div class="col-md-4 box-product">
-                        <div class="box-img"><center><figure><a href="<?php echo $permalink; ?>"><img src="<?php echo $featureImg; ?>" /></a></figure></center></div>
+                        <div class="box-img"><figure><center><a href="<?php echo $permalink; ?>"><img src="<?php echo $featureImg; ?>" /></a></center></figure></div>
                         <div class="box-title"><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></div>
                         <div class="box-price">
                             <span class="box-contact">Giá gốc:</span>
