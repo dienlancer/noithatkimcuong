@@ -1,7 +1,6 @@
 <?php 
 global $zController,$zendvn_sp_settings;
-$vHtml=new HtmlControl();
-$zController->getController("/frontend","ProductController");   
+$vHtml=new HtmlControl();   
 $pageIDShopping = $zController->getHelper('GetPageId')->get('_wp_page_template','zshopping.php');   
     $permarlinkShopping = get_permalink($pageIDShopping);  
 $ssName="vmart";

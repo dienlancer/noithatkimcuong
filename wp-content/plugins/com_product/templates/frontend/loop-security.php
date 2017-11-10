@@ -1,7 +1,6 @@
-<?php
-    global $zController,$zendvn_sp_settings;    
+<div class="page-right">
+    <?php
     $vHtml=new HtmlControl();
-    $zController->getController("/frontend","ProductController");    
     $pageIDLogin = $zController->getHelper('GetPageId')->get('_wp_page_template','login.php');   
     $permarlinkLogin = get_permalink($pageIDLogin);  
     $ssName="vmuser";
@@ -9,8 +8,16 @@
     $id=0;
     $ssUser     = $zController->getSession('SessionHelper',$ssName,$ssValue);
     $arrUser = @$ssUser->get($ssValue)["userInfo"];
-    if(count($arrUser) == 0)
+    if(count($arrUser) == 0){
         wp_redirect($permarlinkLogin);
+    }
+    if(have_posts()){
+        while (have_posts()) {
+            the_post();
+            echo '<h3 class="page-title h-title">'.get_the_title().'</h3>';
+        }
+        wp_reset_postdata();
+    }
     $msg = "";
         $data=$zController->_data["data"];
         $error=$zController->_data["error"];  
@@ -31,15 +38,16 @@
                 $msg .= '</ul>';
             }
         }
-        if(!empty($msg))
+        if(!empty($msg)){
             echo $msg; 
-    $id=$arrUser["id"];
+        }
+        $id=$arrUser["id"];
         $userModel=$zController->getModel("/frontend","UserModel"); 
         $info=$userModel->getUserById($id);
         $detail=$info[0];
         ?>
         <form method="post" name="frm">    
-            <table id="com_product30" class="com_product30" border="0" width="40%" cellpadding="0" cellspacing="0">                   
+            <table id="com_product30" class="com_product30" border="0" width="90%" cellpadding="0" cellspacing="0">                   
                 <tbody>        
                     <tr>
                         <td align="right">Tài khoản</td>
@@ -67,3 +75,4 @@
             </table>
         </form>
      
+</div>

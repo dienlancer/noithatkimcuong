@@ -1,18 +1,19 @@
-<?php
-    global $zController,$zendvn_sp_settings;
+<div class="page-right">
+<?php    
     $meta_key="_zendvn_sp_zaproduct_";
     $vHtml=new HtmlControl();
-    $zController->getController("/frontend","ProductController");   
     if(have_posts()){
         while (have_posts()) {
             the_post();
-            echo '<h1 class="title-category">'.get_the_title().'</h1><hr>';
+            echo '<h3 class="page-title h-title">'.get_the_title().'</h3>';
         }
+        wp_reset_postdata();
     }
     $msg = "";
     $data=array();        
-    if(count($zController->_data["data"]) > 0)
+    if(count($zController->_data["data"]) > 0){
         $data=$zController->_data["data"];
+    }
     $error=$zController->_data["error"];        
     if(count($error) > 0){
         $msg .= '<ul class="comproduct33">';        
@@ -24,7 +25,7 @@
     }        
 ?>   
 <form method="post" name="frm" >    
-    <table id="com_product30" class="com_product30" border="0" width="40%" cellpadding="0" cellspacing="0">                   
+    <table id="com_product30" class="com_product30" border="0" width="90%" cellpadding="0" cellspacing="0">                   
         <tbody>        
             <tr>
                 <td align="right">Tài khoản</td>
@@ -73,3 +74,4 @@
         </tbody>    
     </table>
 </form>
+</div>

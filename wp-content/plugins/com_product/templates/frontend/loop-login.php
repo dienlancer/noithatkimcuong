@@ -1,12 +1,12 @@
-<?php 
-    global $zController,$zendvn_sp_settings;     
-    $vHtml=new HtmlControl();
-    $zController->getController("/frontend","ProductController");     
+<div class="page-right">
+    <?php  
+    $vHtml=new HtmlControl(); 
     if(have_posts()){
         while (have_posts()) {
             the_post();
-            echo '<h1 class="title-category">'.get_the_title().'</h1><hr>';
+            echo '<h3 class="page-title h-title">'.get_the_title().'</h3>';
         }
+        wp_reset_postdata();
     }
     $msg = "";
     $data=$zController->_data["data"];
@@ -28,11 +28,12 @@
             $msg .= '</ul>';
         }
     }
-    if(!empty($msg))
+    if(!empty($msg)){
         echo $msg;     
+    }
 ?>
 <form method="post" name="frmLogin">
-        <table id="com_product30" class="com_product30" border="0" width="50%" cellpadding="0" cellspacing="0">            
+        <table id="com_product30" class="com_product30" border="0" width="90%" cellpadding="0" cellspacing="0">            
             <tbody>                
                 <tr>
                     <td>Username</td>
@@ -55,3 +56,4 @@
                         
                         </table>    
 </form>
+</div>

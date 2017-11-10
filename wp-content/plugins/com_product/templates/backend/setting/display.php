@@ -144,6 +144,26 @@ $inputName 			= $option_name . '[youtube_url]';
 $inputValue 		= @$data['youtube_url'];			
 $youtube_url			= $vHtml->cmsTextbox($inputID,$inputName,"regular-text", $inputValue);
 
+$inputID 			= $option_name . '_instagram_url';
+$inputName 			= $option_name . '[instagram_url]';
+$inputValue 		= @$data['instagram_url'];			
+$instagram_url			= $vHtml->cmsTextbox($inputID,$inputName,"regular-text", $inputValue);
+
+$inputID 			= $option_name . '_pinterest_url';
+$inputName 			= $option_name . '[pinterest_url]';
+$inputValue 		= @$data['pinterest_url'];			
+$pinterest_url			= $vHtml->cmsTextbox($inputID,$inputName,"regular-text", $inputValue);
+
+$inputID 			= $option_name . '_slogan_about';
+$inputName 			= $option_name . '[slogan_about]';
+$inputValue 		= @$data['slogan_about'];			
+$slogan_about			= $vHtml->cmsTextbox($inputID,$inputName,"regular-text", $inputValue);
+
+$inputID 			= $option_name . '_ban_do';
+$inputName 			= $option_name . '[ban_do]';
+$inputValue 		= @$data['ban_do'];			
+$ban_do			=$vHtml->cmsTextarea($inputID,$inputName,"widefat",$inputValue,8,120);
+
 ?>
 <div class="wrap">
 	<h1>Setting</h1>
@@ -336,6 +356,30 @@ $youtube_url			= $vHtml->cmsTextbox($inputID,$inputName,"regular-text", $inputVa
 							<b><i><label >Youtube</label></i></b>
 						</th>
 						<td><?php echo $youtube_url;?></td>
+					</tr>
+					<tr>
+						<th scope="row">
+							<b><i><label >Instagram</label></i></b>
+						</th>
+						<td><?php echo $instagram_url;?></td>
+					</tr>
+					<tr>
+						<th scope="row">
+							<b><i><label >Pinterest</label></i></b>
+						</th>
+						<td><?php echo $pinterest_url;?></td>
+					</tr>
+					<tr>
+						<th scope="row">
+							<b><i><label >Slogan About</label></i></b>
+						</th>
+						<td><?php echo $slogan_about;?></td>
+					</tr>
+					<tr>
+						<th scope="row">
+							<b><i><label >Bản đồ</label></i></b>
+						</th>
+						<td><?php echo $ban_do;?></td>
 					</tr>
 				</tbody>			
 			</table>

@@ -1,5 +1,5 @@
-<?php 
-    global $zController,$wpdb,$zendvn_sp_settings;
+<div class="page-right">
+	<?php 
     $vHtml=new HtmlControl();
     $width=$zendvn_sp_settings["product_width"];
     $height=$zendvn_sp_settings["product_height"];
@@ -7,12 +7,20 @@
     $ssValue="userlogin";
     $ssUser     = $zController->getSession('SessionHelper',$ssName,$ssValue);
     $arrUser = @$ssUser->get($ssValue)["userInfo"];
-    if(count($arrUser) == 0)
+    if(count($arrUser) == 0){
         wp_redirect($permarlinkLogin);
+    }
     $user_id=$arrUser["id"];
     $model=$zController->getModel("/frontend","InvoiceModel");
 	$arr_invoice=$model->getLstInvoiceByUserID($user_id);	
-	$data = $zController->getHelper('DataConverter')->convertInvoiceToArrayData($arr_invoice);		
+	$data = $zController->getHelper('DataConverter')->convertInvoiceToArrayData($arr_invoice);
+	if(have_posts()){
+        while (have_posts()) {
+            the_post();
+            echo '<h3 class="page-title h-title">'.get_the_title().'</h3>';
+        }
+        wp_reset_postdata();
+    }		
  ?>
  <table id="com_product16" class="com_product16" cellpadding="0" cellspacing="0" width="100%">
 	<thead>
@@ -77,4 +85,5 @@
       </div>      
     </div>
   </div>
+</div>
 </div>

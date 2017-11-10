@@ -36,7 +36,7 @@ class ProductController{
 				$product_name=($zController->getParams("product_name"));
 				$product_image=$zController->getParams("product_image");
 				$product_price=(float)($zController->getParams("product_price"));
-				$product_quantity=(int)($zController->getParams("product_quantity"));
+				$product_quantity=(int)($zController->getParams("product_quantity"));				
 				$ssName="vmart";
 				$ssValue="zcart";				
 				$ssCart 	= $zController->getSession('SessionHelper',$ssName,$ssValue);
@@ -50,7 +50,7 @@ class ProductController{
 						}else{					
 							$arrCart[$product_id]["product_quantity"] = $arrCart[$product_id]["product_quantity"] + $product_quantity;
 						}
-					}
+					}					
 					$arrCart[$product_id]["product_id"]=$product_id;	
 					$arrCart[$product_id]["product_code"]=$product_code;
 					$arrCart[$product_id]["product_name"]=$product_name;			
@@ -59,6 +59,7 @@ class ProductController{
 					$product_quantity=(float)$arrCart[$product_id]["product_quantity"];
 					$product_total_price=$product_price * $product_quantity;
 					$arrCart[$product_id]["product_total_price"]=($product_total_price);
+					
 					$cart["cart"]=$arrCart;
 					$ssCart->set($ssValue,$cart);			
 					$pageID = $zController->getHelper('GetPageId')->get('_wp_page_template','zcart.php');	

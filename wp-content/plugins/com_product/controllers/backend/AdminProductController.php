@@ -121,12 +121,11 @@ class AdminProductController{
 		$wpnonce_action = $this->_metabox_id;
 		$thumbnail_id 	= get_post_thumbnail_id($post_id);	
 		$featureImg=wp_get_attachment_image_src($thumbnail_id,"single-post-thumbnail");	
-		$imgThumbnailHelper=$zController->getHelper("ImgThumbnail");	
-		if(!empty($featureImg[0])){						
+		$imgThumbnailHelper=$zController->getHelper("ImgThumbnail");			
+		if(count($featureImg)>0){						
 			$imgThumbnailHelper->resizeImage($featureImg[0],$width,$height);
 		}		
-		if(count($arrParam[$this->create_id('img-url')]) > 0){
-			
+		if(count($arrParam[$this->create_id('img-url')]) > 0){			
 			foreach ($arrParam[$this->create_id('img-url')] as $key => $value) {				
 				if(!empty($value))
 					$imgThumbnailHelper->resizeImage($value,$width,$height);
@@ -143,12 +142,13 @@ class AdminProductController{
 		
 		if(!current_user_can('edit_post')) return $post_id;
 		
-		$arrData =  array(					
+		$arrData =  array(
+			'product_code' 	=> ($arrParam[$this->create_id('product_code')]),					
 			'img-ordering' 	=> array_map('absint',$arrParam[$this->create_id('img-ordering')]),
 			'img-url' 		=> $arrParam[$this->create_id('img-url')],					
 			'price' 		=> filter_var($arrParam[$this->create_id('price')],FILTER_VALIDATE_FLOAT),
-			'sale_price' 		=> filter_var($arrParam[$this->create_id('sale_price')],FILTER_VALIDATE_FLOAT),
-			'intro' 	=> trim($arrParam[$this->create_id('intro')])	
+			'sale_price' 	=> filter_var($arrParam[$this->create_id('sale_price')],FILTER_VALIDATE_FLOAT),
+			'intro' 		=> trim($arrParam[$this->create_id('intro')])	
 			
 		);
 		if(!isset($arrParam['save'])){
@@ -161,7 +161,16 @@ class AdminProductController{
 	public function detail(){
 		global $zController , $post ;
 		$vHtml=new HtmlControl(); 
-		wp_nonce_field($this->_metabox_id,$this->_metabox_id . "-nonce");		
+		wp_nonce_field($this->_metabox_id,$this->_metabox_id . "-nonce");	
+		// Tạo phần tử chứa mã
+		$inputID = $this->create_id("product_code");
+		$inputName = $this->create_id("product_code");
+		$inputValue = get_post_meta($post->ID,$this->create_key("product_code"),true);
+		$inputValue=filter_var($inputValue,FILTER_VALIDATE_FLOAT);
+		$label='<label><b>Code</b></label>';
+		$textbox=$vHtml->cmsTextbox($inputID,$inputName,"", $inputValue);
+		$html='<div class="form-field">'.$label.'<br/>'.$textbox.'</div>';
+		echo $html;			
 		// Tạo phần tử chứa giá
 		$inputID = $this->create_id("price");
 		$inputName = $this->create_id("price");
